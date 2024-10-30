@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Corben:700" rel="stylesheet">
+    <style>
+        li {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+
+        p {
+            margin-left: 40px;
+        }
+
+        ul {
+            width: 30vw;
+        }
+
+        h1 {
+            margin-right: 50px;
+        }
+
+        body {
+            color: white;
+            background-color: black;
+        }
+
+        input {
+            border: 5px solid rgba(211, 220, 50, .6);
+            transition: ease 1s;
+            outline: none;
+        }
+
+        input:focus {
+            border: 5px solid rgba(255, 0, 0, 0.6);
+        }
+
+        button {
+            width: 100px;
+            height: 50px;
+            color: black;
+            font-family: sans-serif;
+            background-color: white;
+            border: 5px solid red;
+            transition: ease 1s;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        @media only screen and (max-width: 1098px) {
+            ul {
+                width: 100vw;
+            }
+
+            li {
+                flex-direction: column;
+            }
+
+            input {
+                width: 70vw;
+            }
+        }
+
+        span {
+            color: black;
+            background-color: yellow;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>MADLIBS</h1>
+    <div id="input-block">
+        <form action="/" method="post">
+            <ul>
+                <li>
+                    <label for="genre">GENRE</label> 
+                    <input type="textbox" name="genre"/>
+                </li>
+                <li>
+                    <label for="verb-1">VERB</label> 
+                    <input type="textbox" class="verb1" name="verb-1"/>
+                </li>
+                <li>
+                    <label for="adjective1">ADJECTIVE</label> 
+                    <input type="textbox" name="adjective-1"/>
+                </li>
+                <li>
+                    <label for="verb-2">VERB</label> 
+                    <input type="textbox" class="verb2" name="verb-2"/>
+                </li>
+                <li>
+                    <label for="noun-plural1">NOUN (PLURAL)</label>
+                    <input type="textbox" name="noun-1"/>
+                </li>
+            </ul>
+            <br>
+            <button id="submit" type="submit">GO MAD!!!</button>
+        </form>
+        <p class="story"></p>
+        <script type="text/javascript">
+            const X = document.querySelector(".story")
+            X.innerHTML = "{{data}}".toString();
+            const y = "{{data}}"
+        </script>
+    </div>
+</body>
+</html>
