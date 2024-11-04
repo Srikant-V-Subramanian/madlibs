@@ -22,9 +22,9 @@ def k():
         b = request.form.get("verb-2")
         c = request.form.get("adjective-1")
         d = request.form.get("noun-1")
-        a1 = model.generate_content(f"generate a story based on four words {a}, {b}, {c}, {d} send it in innerhtml format with <span> around every input")
+        a1 = model.generate_content(f"generate a story based on four words {a}, {b}, {c}, {d}, generate an apt title for the story too, insert baclslash before every apostrophe")
         print(a1.text)
-        return render_template("index2.html",data=a1.text, shit="i hate this shit fr")
+        return render_template("index2.html",data=a1.text)
 
 
     return render_template("index.html")

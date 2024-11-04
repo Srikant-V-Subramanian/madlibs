@@ -112,9 +112,10 @@
         </form>
         <p class="story"></p>
         <script type="text/javascript">
-            const X = document.querySelector(".story")
-            X.innerHTML = "{{data}}".toString();
-            const y = "{{data}}"
+                const X = document.querySelector(".story")
+                const story = `{{data}}`.toString();
+                X.innerText = story
+            
         </script>
     </div>
 </body>
